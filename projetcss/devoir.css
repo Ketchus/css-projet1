@@ -1,0 +1,162 @@
+/* Réinitialisation des styles par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styles pour le corps de la page */
+body {
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styles pour le header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header div {
+    padding: 10px;
+}
+
+/* Styles pour la navigation*/
+.nav-item{
+    background-image: url("img/bkg_menu_demarches.jpg");
+    
+    
+}
+
+nav ul li:hover ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 0;
+    width: 100%;
+}
+
+nav ul ul li a {
+    text-decoration: none;
+    
+}
+
+
+/* Styles pour la section principale */
+section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+      "main main aside"
+      "main main aside"
+      ". . aside";
+    padding-bottom: 20px;
+}
+  
+main {
+    grid-area: main;
+    background-color: #f1f6f8;
+    border-radius: 0 0 10px 10px;
+    
+}
+  
+h1 {
+    background-color: #105c94;
+    color: white;
+    border-radius: 10px 10px 0 0;
+    padding-left: 50px;
+    font-size: 24px !important;
+}
+
+main > div {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-gap: 10px;
+    border-radius: 10px ;
+
+}
+  
+aside {
+    grid-area: aside;
+    border-radius: 10px 10px 0 0;
+}
+
+aside > div > ul > li > a{
+    text-decoration: none;
+    color: gray;
+}
+  
+aside > div {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    background-color: #f1f6f8;
+    color: #105c94;
+}
+
+  
+h3 {
+    background-color: #9c2f03;
+    color: #eef3f7;
+    border-radius: 10px 10px 0 0;
+    padding-left: 50px;
+    font-size: 24px !important;
+}
+  
+/* Styles pour le footer */
+footer {
+    background-color: #008bd3;
+    border-radius: 0 0 10px 10px;
+}
+
+footer ul li a {
+    list-style: none;
+    color: rgb(255, 255, 255);
+}
+
+
+.list-inline{
+    display: flex; 
+    align-items: flex-start;
+    padding: 20px;
+
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Styles pour le responsive */
+@media (max-width: 370px) {
+    header {
+        flex-direction: column;
+    }
+
+    main > div {
+        display: block;
+    }
+
+    section {
+        display: block;
+    }
+    
+    .nav.flex-column.flex-md-row .nav-item {
+        width: 100%; 
+    }
+
+    footer ul li {
+        display: block;
+        width: 100%;
+    }
+
+    .list-inline {
+        display: block;
+    }
+
+    
+
+}
